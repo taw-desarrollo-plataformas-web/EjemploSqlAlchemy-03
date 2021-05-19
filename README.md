@@ -171,7 +171,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contacto
 
-René Elizalde - [@reroes](https://twitter.com/reroes) - rrelizalde@utpl.edu.ec
+René Elizalde Solano - [@reroes](https://twitter.com/reroes) - rrelizalde@utpl.edu.ec
 
 
 
