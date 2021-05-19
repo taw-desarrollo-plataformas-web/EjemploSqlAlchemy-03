@@ -1,31 +1,9 @@
 <!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Thanks again! Now go create something AMAZING! :D
-***
-***
-***
-*** To avoid retyping too much info. Do a search and replace for the following:
-*** github_username, repo_name, twitter_handle, email, project_title, project_description
+*** Se usa como template - https://github.com/othneildrew/Best-README-Template
 -->
 
 
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![PyPI download month](https://img.shields.io/pypi/dm/sqlalchemy.svg)](https://pypi.python.org/pypi/sqlalchemy/)
 
 
 
@@ -39,7 +17,8 @@
   <h3 align="center">Ejemplo de uso de la SqlAlchemy</h3>
 
   <p align="center">
-Es un repositorio académico que permite ejemplificar el proceso de creación de entidades, ingreso y consulta de información a través de la SqlAlchemy.
+Es un repositorio académico que permite ejemplificar el proceso de creación de entidades, ingreso y consulta de información a través de la SqlAlchemy. 
+ <a href="https://www.sqlalchemy.org/">SqlAlchemy</a>
     <br />
   </p>
 </p>
@@ -60,12 +39,9 @@ Es un repositorio académico que permite ejemplificar el proceso de creación de
         <li><a href="#instalacion">Instalación</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
+    <li><a href="#usos">Usos</a></li>
+    <li><a href="#licencia">Licencia</a></li>
+    <li><a href="#contacto">Contacto</a></li>
   </ol>
 </details>
 
@@ -94,7 +70,7 @@ Para poder usar el presente proyecto, tomar en consideración lo siguiente:
   	pip install SQLAlchemy
   ```
 
-### Installation
+### Instalación
 
 * Opción a. Clonar el repositorio
    ```sh
@@ -150,8 +126,9 @@ docentes = session.query(Docente).filter(Docente.ciudad=="Loja", Docente.nombre!
 print("--------------------------------")
 print(docentes)
 print("--------------------------------")
-
 ```
+
+``` python
 print("Ejemplo 8")
 print("""Obtener todos los registros de·
 la tabla Docente que tengan dentro del valor del atributo ciudad  
@@ -163,7 +140,7 @@ docentes = session.query(Docente).filter(Docente.ciudad.like("%oja%"), Docente.n
 print("--------------------------------")
 print(docentes)
 print("--------------------------------")
-
+```
 
 ```python
 
@@ -194,7 +171,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contacto
 
-René Elizalde - [@twitter_handle](https://twitter.com/reroes) - rrelizalde@utpl.edu.ec
+René Elizalde - [@reroes](https://twitter.com/reroes) - rrelizalde@utpl.edu.ec
 
 Project Link: [https://github.com/taw-desarrollo-plataformas-web/EjemploSqlAlchemy-02](https://github.com/taw-desarrollo-plataformas-web/EjemploSqlAlchemy-02)
 
