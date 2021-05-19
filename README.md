@@ -173,6 +173,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 René Elizalde - [@reroes](https://twitter.com/reroes) - rrelizalde@utpl.edu.ec
 
-Project Link: <a href="https://github.com/taw-desarrollo-plataformas-web/EjemploSqlAlchemy-02" target="_blank">https://github.com/taw-desarrollo-plataformas-web/EjemploSqlAlchemy-02</a>
 
 
