@@ -63,7 +63,8 @@ print("""Obtener todos los registros de·
 la tabla Docente que tengan el atributo ciudad un valor de Loja y 
 se ordenen por el atributo de la clase Docente nombre""")
 
-docentes = session.query(Docente).filter(Docente.ciudad=="Loja").order_by(Docente.nombre).all()
+docentes = session.query(Docente).filter(Docente.ciudad=="Loja")\
+        .order_by(Docente.nombre).all()
 print("--------------------------------")
 print(docentes)
 print("--------------------------------")
@@ -74,7 +75,8 @@ print("""Obtener todos los registros de·
 la tabla Docente que tengan el atributo ciudad igual a None y 
 se ordenen por el atributo de la clase Docente nombre""")
 
-docentes = session.query(Docente).filter(Docente.ciudad!=None).order_by(Docente.nombre).all()
+docentes = session.query(Docente).filter(Docente.ciudad!=None)\
+        .order_by(Docente.nombre).all()
 
 print("--------------------------------")
 print(docentes)
@@ -87,7 +89,8 @@ la tabla Docente que tengan el atributo ciudad igual a Loja y además valor
 del atributo nombre sea diferente de None. 
 Finalmente que se ordenen por el atributo de la clase Docente nombre""")
 
-docentes = session.query(Docente).filter(Docente.ciudad=="Loja", Docente.nombre!=None).order_by(Docente.nombre).all() 
+docentes = session.query(Docente).filter(Docente.ciudad=="Loja", \
+        Docente.nombre!=None).order_by(Docente.nombre).all() 
 
 print("--------------------------------")
 print(docentes)
@@ -101,7 +104,8 @@ la cadena "oja" y
 el atributo nombre sea diferente de None. 
 Finalmente que se ordenen por el atributo de la clase Docente nombre""")
 
-docentes = session.query(Docente).filter(Docente.ciudad.like("%oja%"), Docente.nombre!=None).order_by(Docente.nombre).all() 
+docentes = session.query(Docente).filter(Docente.ciudad.like("%oja%"), \
+        Docente.nombre!=None).order_by(Docente.nombre).all() 
 print("--------------------------------")
 print(docentes)
 print("--------------------------------")
@@ -115,7 +119,8 @@ la cadena "oja" y
 el atributo nombre sea diferente de None. 
 Finalmente que se ordenen por el atributo de la clase Docente nombre""")
 
-docentes = session.query(Docente).filter(and_(Docente.ciudad.like("%oja%"), Docente.nombre!=None)).order_by(Docente.nombre).all()  
+docentes = session.query(Docente).filter(and_(Docente.ciudad.like("%oja%"),\
+        Docente.nombre!=None)).order_by(Docente.nombre).all()  
 
 print("--------------------------------")
 print(docentes)
@@ -129,7 +134,8 @@ en la lista dada ["Minga", "Borrero"]
 Finalmente que se ordenen por el atributo de la clase Docente nombre""")
 
 
-docentes = session.query(Docente).filter(Docente.apellido.in_(['Minga', 'Borrero', "Elizalde"])).order_by(Docente.nombre).all()
+docentes = session.query(Docente).filter(Docente.apellido.in_(['Minga', \
+        'Borrero', "Elizalde"])).order_by(Docente.nombre).all()
  
 print("--------------------------------")
 print(docentes)
@@ -144,14 +150,12 @@ o que el apellido sea Garcia
 Finalmente que se ordenen por el atributo de la clase Docente nombre""")
 
 
-docentes = session.query(Docente).filter(or_(Docente.apellido=="Minga", Docente.apellido=="García")).order_by(Docente.nombre).all() 
+docentes = session.query(Docente).filter(or_(Docente.apellido=="Minga",\
+        Docente.apellido=="García")).order_by(Docente.nombre).all() 
 
 print("--------------------------------")
 print(docentes)
 print("--------------------------------")
-
-
-
 
 
 
