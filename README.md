@@ -52,10 +52,6 @@ Es un repositorio académico que permite ejemplificar el proceso de creación de
 
 Es un repositorio académico que permite ejemplificar el proceso de creación de entidades, ingreso y consulta de información a través de la SqlAlchemy.
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
-
 
 <!-- GETTING STARTED -->
 ## Inicio del proyecto
@@ -64,8 +60,8 @@ Para poder usar el presente proyecto, tomar en consideración lo siguiente:
 
 ### Prerrequisitos
 
-* Instalar Python 3.x
-* Instalar SQLAlchemy
+* Instalar [Python](https://www.python.org/) 
+* Instalar [SQLAlchemy](https://www.sqlalchemy.org/) 
   ```
   	pip install SQLAlchemy
   ```
