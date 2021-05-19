@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/taw-desarrollo-plataformas-web/EjemploSqlAlchemy-02">
-    <img src="https://www.sqlalchemy.org/img/sqla_logo.png" alt="Logo" width="80" height="80">
+    <img src="https://www.sqlalchemy.org/img/sqla_logo.png" alt="Logo">
   </a>
 
   <h3 align="center">Ejemplo de uso de la SqlAlchemy</h3>
