@@ -52,15 +52,12 @@ Es un repositorio académico que permite ejemplificar el proceso de creación de
   <ol>
     <li>
       <a href="#sobre-el-proyecto">Sobre el proyecto</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
+     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#Inicio-del-proyecto">Inicio del proyecto</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#prerrequisitos">Prerrequisitos</a></li>
+        <li><a href="#instalacion">Instalación</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -84,107 +81,121 @@ Here's a blank template to get started:
 `github_username`, `repo_name`, `twitter_handle`, `email`, `project_title`, `project_description`
 
 
-### Built With
-
-* []()
-* []()
-* []()
-
-
-
 <!-- GETTING STARTED -->
-## Getting Started
+## Inicio del proyecto
 
-To get a local copy up and running follow these simple steps.
+Para poder usar el presente proyecto, tomar en consideración lo siguiente:
 
-### Prerequisites
+### Prerrequisitos
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
+* Instalar Python 3.x
+* Instalar SQLAlchemy
+  ```
+  	pip install SQLAlchemy
   ```
 
 ### Installation
 
-1. Clone the repo
+* Opción a. Clonar el repositorio
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/taw-desarrollo-plataformas-web/EjemploSqlAlchemy-02
    ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
+o
 
+* Opción b. Descargar la carpeta comprimida del repositorio
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
+## Usos
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+* En el archivo consulta_data.py se detallan algunas consultas generadas con SqlAlchemy
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+```python
+print("Ejemplo 1")
+print("""Obtener todos los registros de 
+la entidad docentes """)
+docentes = session.query(Docente).all() # [docente1, docente2, docente3]
+```
+
+```python
+print("Ejemplo 2")
+print("""Obtener todos los registros de 
+la tabla docentes que tengan como valor en 
+el atributo especifico """)
+
+docentes_dos = session.query(Docente).filter(Docente.ciudad=="Loja").all()
+
+```
+```python
+print("Ejemplo 4")
+print("""Obtener todos los registros de·
+la tabla Docente que tengan el atributo ciudad un valor de Loja y 
+se ordenen por el atributo de la clase Docente nombre""")
+
+docentes = session.query(Docente).filter(Docente.ciudad=="Loja").order_by(Docente.nombre).all()
+print("--------------------------------")
+print(docentes)
+print("--------------------------------")
+```
+
+```python
+print("Ejemplo 7")
+print("""Obtener todos los registros de·
+la tabla Docente que tengan el atributo ciudad igual a Loja y además valor 
+del atributo nombre sea diferente de None. 
+Finalmente que se ordenen por el atributo de la clase Docente nombre""")
+
+docentes = session.query(Docente).filter(Docente.ciudad=="Loja", Docente.nombre!=None).order_by(Docente.nombre).all() 
+
+print("--------------------------------")
+print(docentes)
+print("--------------------------------")
+
+```
+print("Ejemplo 8")
+print("""Obtener todos los registros de·
+la tabla Docente que tengan dentro del valor del atributo ciudad  
+la cadena "oja" y 
+el atributo nombre sea diferente de None. 
+Finalmente que se ordenen por el atributo de la clase Docente nombre""")
+
+docentes = session.query(Docente).filter(Docente.ciudad.like("%oja%"), Docente.nombre!=None).order_by(Docente.nombre).all() 
+print("--------------------------------")
+print(docentes)
+print("--------------------------------")
 
 
+```python
 
-<!-- ROADMAP -->
-## Roadmap
-
-See the [open issues](https://github.com/github_username/repo_name/issues) for a list of proposed features (and known issues).
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+print("Ejemplo 10")
+print("""Uso de in_
+Obtener todos los registros de·
+la tabla Docente que tengan el valor del atributo apellido  
+en la lista dada ["Minga", "Borrero"]
+Finalmente que se ordenen por el atributo de la clase Docente nombre""")
 
 
+docentes = session.query(Docente).filter(Docente.apellido.in_(['Minga', 'Borrero', "Elizalde"])).order_by(Docente.nombre).all()
+ 
+print("--------------------------------")
+print(docentes)
+print("--------------------------------")
+
+
+```
 
 <!-- LICENSE -->
-## License
+## Licencia
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
 
 <!-- CONTACT -->
-## Contact
+## Contacto
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email
+René Elizalde - [@twitter_handle](https://twitter.com/reroes) - rrelizalde@utpl.edu.ec
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/github_username/repo_name)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-* []()
-* []()
-* []()
+Project Link: [https://github.com/taw-desarrollo-plataformas-web/EjemploSqlAlchemy-02](https://github.com/taw-desarrollo-plataformas-web/EjemploSqlAlchemy-02)
 
 
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/github_username
