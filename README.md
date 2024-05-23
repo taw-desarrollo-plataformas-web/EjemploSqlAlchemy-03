@@ -17,7 +17,7 @@
   <h3 align="center">Ejemplo de uso de la SqlAlchemy</h3>
 
   <p align="center">
-Es un repositorio académico que permite ejemplificar el proceso de creación de entidades, ingreso y consulta de información a través de la SqlAlchemy. 
+Es un repositorio académico que permite ejemplificar el proceso de creación de entidades, ingreso y consulta de información a través de la SqlAlchemy.
  <a href="https://www.sqlalchemy.org/">SqlAlchemy</a>
     <br />
   </p>
@@ -60,8 +60,8 @@ Para poder usar el presente proyecto, tomar en consideración lo siguiente:
 
 ### Prerrequisitos
 
-* Instalar [Python](https://www.python.org/) 
-* Instalar [SQLAlchemy](https://www.sqlalchemy.org/) 
+* Instalar [Python](https://www.python.org/)
+* Instalar [SQLAlchemy](https://www.sqlalchemy.org/)
   ```
   	pip install SQLAlchemy
   ```
@@ -83,83 +83,39 @@ o
 * En el archivo consulta_data.py se detallan algunas consultas generadas con SqlAlchemy
 
 ```python
+
 print("Ejemplo 1")
-print("""Obtener todos los registros de 
+print("""Obtener todos los registros de
 la entidad docentes """)
 docentes = session.query(Docente).all() # [docente1, docente2, docente3]
-```
 
-```python
 print("Ejemplo 2")
-print("""Obtener todos los registros de 
-la tabla docentes que tengan como valor en 
+print("""Obtener todos los registros de
+la tabla docentes que tengan como valor en
 el atributo especifico """)
 
-docentes_dos = session.query(Docente).filter(Docente.ciudad=="Loja").all()
+docentes_dos = session.query(Docente).join(Ciudad).filter(Ciudad.nombre=="Loja").all()
 
-```
-```python
+print("--------------------------------")
+for s in docentes_dos:
+    print("%s" % (s))
+    print("---------")
+print("--------------------------------")
+
 print("Ejemplo 4")
-print("""Obtener todos los registros de·
-la tabla Docente que tengan el atributo ciudad un valor de Loja y 
-se ordenen por el atributo de la clase Docente nombre""")
 
-docentes = session.query(Docente).filter(Docente.ciudad=="Loja")\
-.order_by(Docente.nombre).all()
-print("--------------------------------")
-print(docentes)
-print("--------------------------------")
-```
-
-```python
-print("Ejemplo 7")
-print("""Obtener todos los registros de·
-la tabla Docente que tengan el atributo ciudad igual a Loja y además valor 
-del atributo nombre sea diferente de None. 
-Finalmente que se ordenen por el atributo de la clase Docente nombre""")
-
-docentes = session.query(Docente).filter(Docente.ciudad=="Loja", \
-Docente.nombre!=None).order_by(Docente.nombre).all() 
+ciudades = session.query(Ciudad).all()
 
 print("--------------------------------")
-print(docentes)
+for s in ciudades:
+    print("%s" % (s))
+    for d in s.docentes:
+        print(d)
+    print("---------")
+
 print("--------------------------------")
 ```
 
-``` python
-print("Ejemplo 8")
-print("""Obtener todos los registros de·
-la tabla Docente que tengan dentro del valor del atributo ciudad  
-la cadena "oja" y 
-el atributo nombre sea diferente de None. 
-Finalmente que se ordenen por el atributo de la clase Docente nombre""")
-
-docentes = session.query(Docente).filter(Docente.ciudad.like("%oja%"), \
-Docente.nombre!=None).order_by(Docente.nombre).all() 
-print("--------------------------------")
-print(docentes)
-print("--------------------------------")
-```
-
-```python
-
-print("Ejemplo 10")
-print("""Uso de in_
-Obtener todos los registros de·
-la tabla Docente que tengan el valor del atributo apellido  
-en la lista dada ["Minga", "Borrero"]
-Finalmente que se ordenen por el atributo de la clase Docente nombre""")
-
-
-docentes = session.query(Docente).filter(Docente.apellido.in_(['Minga', \
-'Borrero', "Elizalde"])).order_by(Docente.nombre).all()
- 
-print("--------------------------------")
-print(docentes)
-print("--------------------------------")
-
-
-```
 
 <!-- LICENSE -->
 ## Licencia
@@ -172,6 +128,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Contacto
 
 René Elizalde Solano - [@reroes](https://twitter.com/reroes) - rrelizalde@utpl.edu.ec
-
-
-
