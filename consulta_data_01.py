@@ -4,7 +4,7 @@ from sqlalchemy import and_, or_ # se importa el operador and
 
 # se importa la clase(s) del
 # archivo genera_tablas
-from crear_base import Docente
+from crear_base import Docente, Ciudad
 
 # se genera enlace al gestor de base de
 # datos
@@ -21,14 +21,12 @@ print("EJEMPLOS DE CONSULTAS")
 
 print("Ejemplo 1")
 print("""Obtener todos los registros de
-la entidad docentes """)
-docentes = session.query(Docente).all() # [docente1, docente2, docente3]
+la entidad Ciudad""")
+ciudades = session.query(Ciudad).all() # 
 
-# Se recorre la lista a través de un ciclo
-# repetitivo for en python
-print("Presentación de todos los Docentes")
+print("Presentación de las ciudades")
 
 print("--------------------------------")
-for s in docentes:
+for s in ciudades:
     print("%s" % (s))
     print("---------")

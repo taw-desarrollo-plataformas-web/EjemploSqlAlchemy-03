@@ -4,7 +4,7 @@ from sqlalchemy import and_, or_ # se importa el operador and
 
 # se importa la clase(s) del
 # archivo genera_tablas
-from crear_base import Docente
+from crear_base import Docente, Ciudad
 
 # se genera enlace al gestor de base de
 # datos
@@ -21,16 +21,14 @@ print("EJEMPLOS DE CONSULTAS")
 
 
 print("Ejemplo 4")
-print("""Obtener todos los registros de·
-la tabla Docente que tengan el atributo ciudad un valor de Loja y
-se ordenen por el atributo de la clase Docente nombre""")
 
-docentes = session.query(Docente).filter(Docente.ciudad=="Loja")\
-        .order_by(Docente.nombre).all()
+ciudades = session.query(Ciudad).all()
 
 print("--------------------------------")
-for s in docentes:
+for s in ciudades:
     print("%s" % (s))
+    for d in s.docentes:
+        print(d)
     print("---------")
 
 print("--------------------------------")

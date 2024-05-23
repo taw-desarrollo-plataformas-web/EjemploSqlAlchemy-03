@@ -4,7 +4,7 @@ from sqlalchemy import and_, or_ # se importa el operador and
 
 # se importa la clase(s) del
 # archivo genera_tablas
-from crear_base import Docente
+from crear_base import Docente, Ciudad
 
 # se genera enlace al gestor de base de
 # datos
@@ -25,7 +25,7 @@ print("""Obtener todos los registros de
 la tabla docentes que tengan como valor en
 el atributo especifico """)
 
-docentes_dos = session.query(Docente).filter(Docente.ciudad=="Loja").all()
+docentes_dos = session.query(Docente).join(Ciudad).filter(Ciudad.nombre=="Loja").all()
 
 print("--------------------------------")
 for s in docentes_dos:
